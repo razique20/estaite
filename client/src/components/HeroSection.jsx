@@ -28,7 +28,7 @@ return(
     <div className="bg-gray-900 text-white py-20 text-center">
       <h1 className="text-5xl font-bold mb-4">ESTAITE</h1>
       <p className="text-xl mb-6">The AI Realtor – Find your perfect place, from bedspaces to land!</p>
-      <button onClick={() => navigate('/properties')} className="bg-indigo-600 px-6 py-3 rounded-lg text-white hover:bg-indigo-700">
+      <button onClick={() => navigate('/properties')} className="bg-indigo-600 px-6 py-3  text-white hover:bg-indigo-700">
         Browse Properties
       </button>
     </div>

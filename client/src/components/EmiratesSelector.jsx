@@ -23,7 +23,7 @@ const EmiratesSelector = () => {
         <button
           key={emirate}
           onClick={() => handleNavigate(emirate)}
-          className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700"
+          className="bg-indigo-600 text-white px-4 py-2 rounded-sm hover:bg-indigo-700"
         >
           {emirate}
         </button>
