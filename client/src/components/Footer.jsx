@@ -8,10 +8,10 @@ const Footer = () => {
             <img
               src="/logo.jpg" // Replace with your actual logo path
               alt="RAAZI Logo"
-              className="w-30 h-20 mb-4"
+              className="w-10 h-10 mb-4"
             />
             <p className="text-gray-400 text-sm">
-              RAAZI is the UAE's premier AI-powered real estate platform,
+             ESTAITE is the UAE's premier AI-powered real estate platform,
               helping you find and rent your perfect property hassle-free.
             </p>
           </div>
@@ -49,10 +49,10 @@ const Footer = () => {
             <p className="text-gray-400 text-sm">
               Email:{" "}
               <a
-                href="mailto:support@raazi.com"
+                href="mailto:support@estaite.com"
                 className="hover:underline text-indigo-400"
               >
-                support@raazi.com
+                support@estaite.com
               </a>
             </p>
             <p className="text-gray-400 text-sm">Phone: +971 50 123 4567</p>
@@ -91,7 +91,7 @@ const Footer = () => {
 
         {/* Footer Bottom */}
         <div className="border-t border-gray-700 mt-8 pt-4 text-center text-sm text-gray-500">
-          &copy; {new Date().getFullYear()} RAAZI. All Rights Reserved.
+          &copy; {new Date().getFullYear()} ESTAITE. All Rights Reserved.
         </div>
       </div>
     </footer>

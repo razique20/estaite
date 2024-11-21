@@ -4,7 +4,7 @@ const AboutUs = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-gray-100 py-8 px-6">
+    <div className="bg-white py-8 px-6">
       {/* Navigation Section */}
       <nav className="mb-6">
         <button
@@ -16,21 +16,21 @@ const AboutUs = () => {
       </nav>
 
       {/* About Us Section */}
-      <div className="text-center max-w-3xl mx-auto mb-12 flex flex-col items-center ">
+      <div className="text-center max-w-3xl mx-auto mb-12 flex flex-col items-center">
         {/* Logo */}
         <img
           src="/logo.jpg" // Replace with your logo file path
-          alt="RAAZI Logo"
-          className="w-[50%]"
+          alt="ESTAITE Logo"
+          className="w-[20%]"
         />
 
         {/* About Us Text */}
         <h2 className="text-4xl font-bold mb-4 text-gray-800">About Us</h2>
         <p className="text-lg text-gray-700 leading-relaxed">
-          Welcome to <strong>RAAZI</strong>, the AI Realtor platform redefining
-          how you rent, buy, or sell properties in the UAE. From affordable
-          bedspaces to sprawling land investments, our mission is to make
-          property transactions seamless and stress-free with the power of
+          Welcome to <strong>ESTAITE</strong>, the AI Realtor platform
+          redefining how you rent, buy, or sell properties in the UAE. From
+          affordable bedspaces to sprawling land investments, our mission is to
+          make property transactions seamless and stress-free with the power of
           artificial intelligence.
         </p>
       </div>
@@ -78,7 +78,7 @@ const AboutUs = () => {
           <div className="text-center">
             <img
               src="/team-member-1.jpg" // Replace with actual image paths
-              alt="Team Member"
+              alt="Razique MK"
               className="w-24 h-24 mx-auto rounded-full mb-4"
             />
             <h4 className="text-lg font-semibold">Razique MK</h4>
@@ -87,16 +87,16 @@ const AboutUs = () => {
           <div className="text-center">
             <img
               src="/team-member-2.jpg"
-              alt="Team Member"
+              alt="Rishan OK"
               className="w-24 h-24 mx-auto rounded-full mb-4"
             />
-            <h4 className="text-lg font-semibold">Rishan ok</h4>
+            <h4 className="text-lg font-semibold">Rishan OK</h4>
             <p className="text-sm">Chief Technology Officer</p>
           </div>
           <div className="text-center">
             <img
               src="/team-member-3.jpg"
-              alt="Team Member"
+              alt="Ali Khan"
               className="w-24 h-24 mx-auto rounded-full mb-4"
             />
             <h4 className="text-lg font-semibold">Ali Khan</h4>
@@ -105,8 +105,8 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Footer Section */}
-      
+    
+     
     </div>
   );
 };
