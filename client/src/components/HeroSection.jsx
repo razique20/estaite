@@ -21,6 +21,9 @@ return(
         <li>
           <a href="/contact" className="hover:text-gray-300">Contact</a>
         </li>
+        <li>
+          <a href="/tours" className="hover:text-gray-300">Tours</a>
+        </li>
       </ul>
     </nav>
 

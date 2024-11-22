@@ -17,12 +17,7 @@ const AboutUs = () => {
 
       {/* About Us Section */}
       <div className="text-center max-w-3xl mx-auto mb-12 flex flex-col items-center">
-        {/* Logo */}
-        <img
-          src="/logo.jpg" // Replace with your logo file path
-          alt="ESTAITE Logo"
-          className="w-[20%]"
-        />
+      
 
         {/* About Us Text */}
         <h2 className="text-4xl font-bold mb-4 text-gray-800">About Us</h2>

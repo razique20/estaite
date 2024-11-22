@@ -18,12 +18,12 @@ const EmiratesSelector = () => {
   };
 
   return (
-    <div className="py-4 flex justify-center gap-4">
+    <div className="py-4 flex flex-wrap justify-center gap-4">
       {emirates.map((emirate) => (
         <button
           key={emirate}
           onClick={() => handleNavigate(emirate)}
-          className="bg-indigo-600 text-white px-4 py-2 rounded-sm hover:bg-indigo-700"
+          className="bg-indigo-600 text-white px-4 py-2 rounded-sm hover:bg-indigo-700 text-sm md:text-base"
         >
           {emirate}
         </button>
