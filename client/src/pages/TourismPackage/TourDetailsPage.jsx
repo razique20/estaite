@@ -1,8 +1,9 @@
-import { useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { TourContext } from "../../context/TourContext";
 
 const TourDetailsPage = () => {
+  const navigate = useNavigate();
   const { Tours } = useContext(TourContext);
   const { id } = useParams(); // Get the tour ID from the URL
   const [tour, setTour] = useState(null);
@@ -24,6 +25,14 @@ const TourDetailsPage = () => {
 
   return (
     <div className="max-w-7xl mx-auto p-6 bg-white shadow-xl rounded-lg">
+      <nav className="mb-6">
+        <button
+          onClick={() => navigate("/")}
+          className="text-indigo-600 font-semibold hover:underline"
+        >
+          &larr; Back to Home
+        </button>
+      </nav>
       {/* Hero Section */}
       <div className="relative">
         <img
@@ -48,11 +57,15 @@ const TourDetailsPage = () => {
             Price: AED {tour.price}
           </p>
 
-          <h2 className="text-2xl font-semibold text-gray-800 mb-6">Itinerary</h2>
+          <h2 className="text-2xl font-semibold text-gray-800 mb-6">
+            Itinerary
+          </h2>
           {tour.itinerary && tour.itinerary.length > 0 ? (
             <ul className="list-disc pl-6 space-y-2 text-gray-700">
               {tour.itinerary.map((item, index) => (
-                <li key={index} className="text-lg">{item}</li>
+                <li key={index} className="text-lg">
+                  {item}
+                </li>
               ))}
             </ul>
           ) : (
@@ -62,9 +75,12 @@ const TourDetailsPage = () => {
 
         {/* Booking and Highlights */}
         <div className="p-6 bg-indigo-50 rounded-lg shadow-md">
-          <h3 className="text-2xl font-bold text-gray-800 mb-6">Why Choose This Tour?</h3>
+          <h3 className="text-2xl font-bold text-gray-800 mb-6">
+            Why Choose This Tour?
+          </h3>
           <p className="text-gray-600 mb-6">
-            Explore the best of {tour.emirate} with thrilling activities, rich culture, and unique experiences tailored for everyone.
+            Explore the best of {tour.emirate} with thrilling activities, rich
+            culture, and unique experiences tailored for everyone.
           </p>
           <button className="bg-indigo-600 text-white px-8 py-4 rounded-md font-semibold shadow-lg hover:bg-indigo-700 transition-all duration-300 w-full">
             Book Now
@@ -74,22 +90,32 @@ const TourDetailsPage = () => {
 
       {/* Testimonials Section */}
       <div className="mt-12 bg-gray-50 p-8 rounded-lg shadow-xl">
-        <h3 className="text-3xl font-semibold text-gray-800 mb-6">Traveler Reviews</h3>
+        <h3 className="text-3xl font-semibold text-gray-800 mb-6">
+          Traveler Reviews
+        </h3>
         <div className="space-y-4">
           <blockquote className="text-lg text-gray-600 italic">
-            "An unforgettable experience! The adventure, the food, and the sights were beyond our expectations." 
-            <span className="block text-indigo-600 font-semibold mt-2">- Sarah K.</span>
+            "An unforgettable experience! The adventure, the food, and the
+            sights were beyond our expectations."
+            <span className="block text-indigo-600 font-semibold mt-2">
+              - Sarah K.
+            </span>
           </blockquote>
           <blockquote className="text-lg text-gray-600 italic">
-            "Amazing tour! The guides were excellent, and the entire journey was well-organized. Highly recommend!" 
-            <span className="block text-indigo-600 font-semibold mt-2">- David M.</span>
+            "Amazing tour! The guides were excellent, and the entire journey was
+            well-organized. Highly recommend!"
+            <span className="block text-indigo-600 font-semibold mt-2">
+              - David M.
+            </span>
           </blockquote>
         </div>
       </div>
 
       {/* What to Expect Section */}
       <div className="mt-8 bg-white p-8 rounded-lg shadow-md">
-        <h3 className="text-2xl font-semibold text-gray-800 mb-6">What to Expect</h3>
+        <h3 className="text-2xl font-semibold text-gray-800 mb-6">
+          What to Expect
+        </h3>
         <ul className="list-disc pl-6 space-y-2 text-gray-700">
           <li>Convenient transportation to and from the tour location</li>
           <li>Knowledgeable and friendly guides</li>
