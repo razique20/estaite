@@ -3,6 +3,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import { TourContext } from "../../context/TourContext";
 
 const TourDetailsPage = () => {
+  useEffect(() => {
+    // Scroll to top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
   const navigate = useNavigate();
   const { Tours } = useContext(TourContext);
   const { id } = useParams(); // Get the tour ID from the URL
