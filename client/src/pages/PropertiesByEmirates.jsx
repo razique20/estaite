@@ -1,9 +1,11 @@
-import { useContext } from "react";
-import { useLocation } from "react-router-dom";
+import { useContext  } from "react";
+import { useLocation , useNavigate } from "react-router-dom";
 import { PropertyContext } from "../context/PropertyContext";
 import PropertyCard from "../components/PropertyCard";
 
 const PropertiesByEmirates = () => {
+
+  const navigate = useNavigate('/')
   const { properties } = useContext(PropertyContext);
   const location = useLocation();
 
@@ -18,6 +20,14 @@ const PropertiesByEmirates = () => {
 
   return (
     <div className="py-8 px-4">
+       <nav className="mb-4">
+        <button
+          onClick={() => navigate("/")} // Navigate to Home
+          className="text-gray-700 font-medium text-sm hover:text-indigo-600 hover:underline transition-all duration-200"
+        >
+          &larr; Back to Home
+        </button>
+        </nav>
       <h2 className="text-3xl font-bold text-center mb-6">
         Properties in {selectedEmirate}
       </h2>

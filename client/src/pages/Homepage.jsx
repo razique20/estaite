@@ -5,28 +5,27 @@ import PropertyCard from "../components/PropertyCard";
 import TourCard from "../components/TourismPackage/TourCard";
 import { PropertyContext } from "../context/PropertyContext";
 import { TourContext } from "../context/TourContext";
-// Import the TourCard component
-
-const emirates = [
-  "Dubai",
-  "Abu Dhabi",
-  "Sharjah",
-  "Ajman",
-  "Fujairah",
-  "Ras Al Khaimah",
-  "Umm Al Quwain",
-];
+import { motion } from "framer-motion";
 
 const HomePage = () => {
   const { Tours } = useContext(TourContext);
   const { properties } = useContext(PropertyContext);
-  // const navigate = useNavigate();
 
-  // const handleNavigate = (emirate) => {
-  //   navigate(`/properties?emirate=${emirate}`);
-  // };
+  // Animation Variants
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  };
 
-  // Mock data for top 5 tourism packages
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
 
   return (
     <div>
@@ -34,52 +33,81 @@ const HomePage = () => {
       <HeroSection />
 
       {/* Emirates Selection */}
-      <section className="py-6 bg-gray-100">
+      <motion.section
+        className="py-6 bg-gray-100"
+        initial="hidden"
+        animate="visible"
+        variants={fadeInUp}
+      >
         <h2 className="text-2xl font-bold text-center mb-4">
           Choose Your Emirate
         </h2>
         <EmiratesSelector />
-      </section>
+      </motion.section>
 
       {/* Featured Properties */}
-      <section className="py-10">
+      <motion.section
+        className="py-10"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={staggerContainer}
+      >
         <h2 className="text-3xl font-bold text-center mb-6">
           Featured Properties
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 px-4 overflow-scroll">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 px-4 overflow-scroll"
+          variants={staggerContainer}
+        >
           {properties && properties.length > 0 ? (
-            properties
-              .slice(0, 5)
-              .map((property, idx) => <PropertyCard key={idx} {...property} />)
+            properties.slice(0, 5).map((property, idx) => (
+              <motion.div key={idx} variants={fadeInUp}>
+                <PropertyCard {...property} />
+              </motion.div>
+            ))
           ) : (
-            <p className="text-center text-gray-500 col-span-full">
+            <motion.p
+              className="text-center text-gray-500 col-span-full"
+              variants={fadeInUp}
+            >
               No featured properties available at the moment.
-            </p>
+            </motion.p>
           )}
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
       {/* Top 5 Tourism Packages */}
-      <section className="py-10 bg-gray-50">
+      <motion.section
+        className="py-10 bg-gray-50"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={staggerContainer}
+      >
         <h2 className="text-3xl font-bold text-center mb-6">
           Top Tour Packages
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4"
+          variants={staggerContainer}
+        >
           {Tours.slice(0, 3).map((tour) => (
-            <TourCard
-              key={tour.id}
-              id={tour.id}
-              title={tour.title}
-              emirate={tour.emirate}
-              price={tour.price}
-              description={tour.description}
-              image={tour.image}
-            />
+            <motion.div key={tour.id} variants={fadeInUp}>
+              <TourCard
+                id={tour.id}
+                title={tour.title}
+                emirate={tour.emirate}
+                price={tour.price}
+                description={tour.description}
+                image={tour.image}
+              />
+            </motion.div>
           ))}
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
     </div>
   );
 };

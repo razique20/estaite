@@ -32,7 +32,7 @@ const TourDetailsPage = () => {
       <nav className="mb-6">
         <button
           onClick={() => navigate("/")}
-          className="text-indigo-600 font-semibold hover:underline"
+          className="text-gray-700 font-medium text-sm hover:text-indigo-600 hover:underline transition-all duration-200"
         >
           &larr; Back to Home
         </button>
@@ -51,7 +51,7 @@ const TourDetailsPage = () => {
       </div>
 
       {/* Details Section */}
-      <div className="mt-10 lg:grid lg:grid-cols-3 lg:gap-8">
+      <div className="mt-10 lg:grid lg:grid-cols-3 lg:gap-8 flex flex-col gap-8">
         {/* Main Info */}
         <div className="lg:col-span-2">
           <p className="text-lg text-gray-700 leading-relaxed mb-6">
@@ -86,7 +86,10 @@ const TourDetailsPage = () => {
             Explore the best of {tour.emirate} with thrilling activities, rich
             culture, and unique experiences tailored for everyone.
           </p>
-          <button className="bg-indigo-600 text-white px-8 py-4 rounded-md font-semibold shadow-lg hover:bg-indigo-700 transition-all duration-300 w-full">
+          <button
+            onClick={() => navigate(`/tourpurchase/${tour.id}`)}
+            className="bg-indigo-600 text-white px-8 py-4 rounded-md font-semibold shadow-lg hover:bg-indigo-700 transition-all duration-300 w-full"
+          >
             Book Now
           </button>
         </div>

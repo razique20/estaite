@@ -26,10 +26,10 @@ const TourPackagesPage = () => {
 
   return (
     <div className="p-6">
-          <nav className="mb-6">
+        <nav className="mb-4">
         <button
-          onClick={() => navigate('/')} // Navigate to Home
-          className="text-indigo-600 font-semibold hover:underline"
+          onClick={() => navigate("/")} // Navigate to Home
+          className="text-gray-700 font-medium text-sm hover:text-indigo-600 hover:underline transition-all duration-200"
         >
           &larr; Back to Home
         </button>

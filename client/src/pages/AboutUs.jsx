@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const AboutUs = () => {
   const navigate = useNavigate();
@@ -6,21 +7,26 @@ const AboutUs = () => {
   return (
     <div className="bg-white py-8 px-6">
       {/* Navigation Section */}
-      <nav className="mb-6">
+      <nav className="mb-4">
         <button
-          onClick={() => navigate("/")}
-          className="text-indigo-600 font-semibold hover:underline"
+          onClick={() => navigate("/")} // Navigate to Home
+          className="text-gray-700 font-medium text-sm hover:text-indigo-600 hover:underline transition-all duration-200"
         >
           &larr; Back to Home
         </button>
       </nav>
 
       {/* About Us Section */}
-      <div className="text-center max-w-3xl mx-auto mb-12 flex flex-col items-center">
-      
-
+      <motion.div
+        className="text-center max-w-3xl mx-auto mb-12 flex flex-col items-center"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         {/* About Us Text */}
-        <h2 className="text-4xl font-bold mb-4 text-gray-800">About Us</h2>
+        <h2 className="text-4xl font-bold mb-4 text-gray-800">
+          About Us
+        </h2>
         <p className="text-lg text-gray-700 leading-relaxed">
           Welcome to <strong>ESTAITE</strong>, the AI Realtor platform
           redefining how you rent, buy, or sell properties in the UAE. From
@@ -28,15 +34,28 @@ const AboutUs = () => {
           make property transactions seamless and stress-free with the power of
           artificial intelligence.
         </p>
-      </div>
+      </motion.div>
 
       {/* Services Section */}
-      <section className="py-12">
+      <motion.section
+        className="py-12 bg-gray-50"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
         <h3 className="text-3xl font-bold text-center mb-8 text-gray-800">
           Our Services
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          <div className="bg-white shadow-md p-6 rounded-lg text-center">
+          {/* Service 1 */}
+          <motion.div
+            className="bg-white shadow-md p-6 rounded-lg text-center hover:shadow-xl transition duration-300 ease-in-out"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
             <h4 className="text-xl font-semibold text-indigo-600 mb-3">
               AI-Powered Property Search
             </h4>
@@ -44,8 +63,17 @@ const AboutUs = () => {
               Use our AI to find properties tailored to your exact needs, from
               bedspaces to luxury villas.
             </p>
-          </div>
-          <div className="bg-white shadow-md p-6 rounded-lg text-center">
+          </motion.div>
+
+          {/* Service 2 */}
+          <motion.div
+            className="bg-white shadow-md p-6 rounded-lg text-center hover:shadow-xl transition duration-300 ease-in-out"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
             <h4 className="text-xl font-semibold text-indigo-600 mb-3">
               Verified Listings
             </h4>
@@ -53,8 +81,17 @@ const AboutUs = () => {
               Browse a wide range of verified listings, ensuring trust and
               transparency in every transaction.
             </p>
-          </div>
-          <div className="bg-white shadow-md p-6 rounded-lg text-center">
+          </motion.div>
+
+          {/* Service 3 */}
+          <motion.div
+            className="bg-white shadow-md p-6 rounded-lg text-center hover:shadow-xl transition duration-300 ease-in-out"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
             <h4 className="text-xl font-semibold text-indigo-600 mb-3">
               Hassle-Free Transactions
             </h4>
@@ -62,45 +99,11 @@ const AboutUs = () => {
               Experience seamless property transactions with our secure platform
               and expert support.
             </p>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Team Members Section */}
-      <section className="bg-indigo-600 py-12 text-white">
-        <h3 className="text-3xl font-bold text-center mb-8">Meet Our Team</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          <div className="text-center">
-            <img
-              src="/team-member-1.jpg" // Replace with actual image paths
-              alt="Razique MK"
-              className="w-24 h-24 mx-auto rounded-full mb-4"
-            />
-            <h4 className="text-lg font-semibold">Razique MK</h4>
-            <p className="text-sm">Founder & CEO</p>
-          </div>
-          <div className="text-center">
-            <img
-              src="/team-member-2.jpg"
-              alt="Rishan OK"
-              className="w-24 h-24 mx-auto rounded-full mb-4"
-            />
-            <h4 className="text-lg font-semibold">Rishan OK</h4>
-            <p className="text-sm">Chief Technology Officer</p>
-          </div>
-          <div className="text-center">
-            <img
-              src="/team-member-3.jpg"
-              alt="Ali Khan"
-              className="w-24 h-24 mx-auto rounded-full mb-4"
-            />
-            <h4 className="text-lg font-semibold">Ali Khan</h4>
-            <p className="text-sm">Head of Operations</p>
-          </div>
-        </div>
-      </section>
-
-    
      
     </div>
   );

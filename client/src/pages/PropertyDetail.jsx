@@ -1,15 +1,14 @@
-import React, { useContext , useEffect } from 'react';
-import { useParams , useNavigate } from 'react-router-dom';
+import React, { useContext, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { PropertyContext } from '../context/PropertyContext';
 
 const PropertyDetails = () => {
+  useEffect(() => {
+    // Scroll to top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
 
-    useEffect(() => {
-        // Scroll to top when the component mounts
-        window.scrollTo(0, 0);
-      }, []);
-
-    const navigate = useNavigate(); // For navigation
+  const navigate = useNavigate(); // For navigation
   const { properties } = useContext(PropertyContext);
   const { id } = useParams(); // Extract ID from the URL
   const property = properties.find((prop) => prop.id === parseInt(id)); // Find the property by ID
@@ -20,15 +19,15 @@ const PropertyDetails = () => {
 
   return (
     <div className="p-6 max-w-7xl mx-auto">
-
-<nav className="mb-6">
+     <nav className="mb-4">
         <button
-          onClick={() => navigate("/")}
-          className="text-indigo-600 font-semibold hover:underline"
+          onClick={() => navigate("/")} // Navigate to Home
+          className="text-gray-700 font-medium text-sm hover:text-indigo-600 hover:underline transition-all duration-200"
         >
           &larr; Back to Home
         </button>
       </nav>
+
       {/* Property Details Container */}
       <div className="bg-white shadow-lg rounded-lg overflow-hidden grid grid-cols-1 md:grid-cols-2">
         {/* Image Section */}
@@ -62,9 +61,12 @@ const PropertyDetails = () => {
             </div>
           </div>
           <div className="mt-6">
-            <button className="w-full bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700">
-              Contact Seller
-            </button>
+          <button
+  onClick={() => navigate(`/purchase/${property.id}`)}  // Update this line
+  className="w-full bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700"
+>
+  Book Now
+</button>
           </div>
         </div>
       </div>
