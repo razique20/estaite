@@ -4,9 +4,9 @@ const ContactSection = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-gray-50 py-10 px-6">
+    <div className="bg-gray-50 py-5 px-6">
       {/* Back Button */}
-      <nav className="mb-4">
+      <nav className="mb-2">
         <button
           onClick={() => navigate("/")} // Navigate to Home
           className="text-gray-700 font-medium text-sm hover:text-indigo-600 hover:underline transition-all duration-200"

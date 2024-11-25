@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useContext } from "react";
 import EmiratesSelector from "../components/EmiratesSelector";
 import HeroSection from "../components/HeroSection";
@@ -5,7 +6,6 @@ import PropertyCard from "../components/PropertyCard";
 import TourCard from "../components/TourismPackage/TourCard";
 import { PropertyContext } from "../context/PropertyContext";
 import { TourContext } from "../context/TourContext";
-import { motion } from "framer-motion";
 
 const HomePage = () => {
   const { Tours } = useContext(TourContext);
@@ -46,6 +46,7 @@ const HomePage = () => {
       </motion.section>
 
       {/* Featured Properties */}
+      {/* Featured Properties */}
       <motion.section
         className="py-10"
         initial="hidden"
@@ -58,7 +59,7 @@ const HomePage = () => {
         </h2>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 px-4 overflow-scroll"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 px-4"
           variants={staggerContainer}
         >
           {properties && properties.length > 0 ? (

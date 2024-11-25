@@ -12,7 +12,7 @@ const Filters = ({ onFilter }) => {
   return (
     <div className="bg-white shadow-md p-4 rounded-lg mb-6">
       <h3 className="text-lg font-bold mb-4">Filters</h3>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-1 gap-4">
         <input
           type="text"
           placeholder="Type (e.g., Apartment, Land)"

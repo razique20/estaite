@@ -132,11 +132,8 @@ const HeroSection = () => {
       {/* Hero Content */}
       <div className="bg-gray-900 text-white py-20 text-center">
         <h1
-          className="text-5xl font-bold mb-4 bg-clip-text text-transparent"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, #008000 20%, #FFFFFF 55%, #FF0000 75%, #000000 100%)",
-          }}
+          className=" text-5xl font-bold mb-4 mt-5 "
+          
         >
           ESTAITE
         </h1>
