@@ -178,9 +178,9 @@ const HeroSection = () => {
       </nav>
 
       {/* Hero Content */}
-      <div className="bg-gray-100 text-black py-20 flex flex-col md:flex-row items-center justify-center">
-        <div className="text-center md:w-1/2 px-6 flex-col">
-          <h1 className="text-5xl font-bold mb-4 text-black">EST<span className="text-gray-600">AI</span>TE</h1>
+      <div className="bg-gray-100 text-black  flex flex-col md:flex-row items-center justify-center">
+        <div className="text-center md:w-1/2 p-7 flex-col">
+          <h1 className="text-5xl font-bold mb-4 pt-10 text-black">EST<span className="text-gray-600">AI</span>TE</h1>
           <div className="text-center">
             <p
               className="text-xl mb-6 text-gray-700 transition-opacity duration-1000 ease-in-out text-center"
