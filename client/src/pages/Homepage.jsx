@@ -33,7 +33,7 @@ const HomePage = () => {
       <HeroSection />
 
       {/* Emirates Selection */}
-      <motion.section
+      {/* <motion.section
         className="py-6 bg-gray-100"
         initial="hidden"
         animate="visible"
@@ -43,7 +43,7 @@ const HomePage = () => {
           Choose Your Emirate
         </h2>
         <EmiratesSelector />
-      </motion.section>
+      </motion.section> */}
 
       {/* Featured Properties */}
       {/* Featured Properties */}
@@ -54,8 +54,8 @@ const HomePage = () => {
         viewport={{ once: true, amount: 0.3 }}
         variants={staggerContainer}
       >
-        <h2 className="text-3xl font-bold text-center mb-6">
-          Featured Properties
+        <h2 className="text-3xl font-bold text-center mb-6 text-gray-700">
+          FEATURED PROPERTIES
         </h2>
 
         <motion.div
@@ -87,7 +87,7 @@ const HomePage = () => {
         viewport={{ once: true, amount: 0.3 }}
         variants={staggerContainer}
       >
-        <h2 className="text-3xl font-bold text-center mb-6">
+        <h2 className="text-3xl font-bold text-center mb-6 text-gray-700">
           Top Tour Packages
         </h2>
 
