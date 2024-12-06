@@ -6,6 +6,7 @@ import PropertyCard from "../components/PropertyCard";
 import TourCard from "../components/TourismPackage/TourCard";
 import { PropertyContext } from "../context/PropertyContext";
 import { TourContext } from "../context/TourContext";
+import AboutUs from "./AboutUs";
 
 const HomePage = () => {
   const { Tours } = useContext(TourContext);
@@ -31,6 +32,9 @@ const HomePage = () => {
     <div>
       {/* Hero Section */}
       <HeroSection />
+
+
+      <AboutUs/>
 
       {/* Emirates Selection */}
       {/* <motion.section

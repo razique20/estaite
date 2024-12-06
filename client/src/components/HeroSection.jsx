@@ -57,9 +57,9 @@ const HeroSection = () => {
             <li>
               <a
                 href="/list-properties"
-                className="flex items-center text-lg font-medium hover:text-gray-800 transition-colors duration-300"
+                className="flex items-center text-sm font-medium hover:text-gray-800 transition-colors duration-300"
               >
-                <i className="fas fa-list mr-2"></i> List Properties
+                List Properties
               </a>
             </li>
             <li>
@@ -179,8 +179,10 @@ const HeroSection = () => {
 
       {/* Hero Content */}
       <div className="bg-gray-100 text-black  flex flex-col md:flex-row items-center justify-center">
-        <div className="text-center md:w-1/2 p-7 flex-col">
-          <h1 className="text-5xl font-bold mb-4 pt-10 text-black">EST<span className="text-gray-600">AI</span>TE</h1>
+        <div className="text-center md:w-1/2 p-20 flex-col">
+          <h1 className="text-5xl font-bold mb-4 pt-10 text-black">
+            EST<span className="text-gray-600">AI</span>TE
+          </h1>
           <div className="text-center">
             <p
               className="text-xl mb-6 text-gray-700 transition-opacity duration-1000 ease-in-out text-center"
@@ -215,7 +217,12 @@ const HeroSection = () => {
           </button>
         </div>
         <div className="mt-6 md:mt-0 md:w-1/2 flex justify-center">
-          <img src={hero} alt="Hero Section" className="shadow-lg" />
+          <img
+            src={hero}
+            alt="Hero Section"
+            className="shadow-lg h-[30rem]"
+            loading="lazy"
+          />
         </div>
       </div>
     </div>
