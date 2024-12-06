@@ -9,9 +9,9 @@ const TourFilter = ({ onFilter }) => {
   };
 
   return (
-    <div className="bg-white shadow-md p-4 rounded-lg mb-6">
+    <div className="bg-white shadow-md p-4 rounded-lg mb-6 ">
       <h3 className="text-lg font-bold mb-4">Filter Tour Packages</h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
         <select
           value={emirate}
           onChange={(e) => setEmirate(e.target.value)}
