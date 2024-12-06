@@ -6,11 +6,11 @@ import TourProvider from "./context/TourContext.jsx";
 import "./index.css";
 
 createRoot(document.getElementById("root")).render(
-  <PropertyContextProvider>
-    <TourProvider>
-      <BrowserRouter>
+  <BrowserRouter>
+    <PropertyContextProvider>
+      <TourProvider>
         <App />
-      </BrowserRouter>
-    </TourProvider>
-  </PropertyContextProvider>
+      </TourProvider>
+    </PropertyContextProvider>
+  </BrowserRouter>
 );
